@@ -44,9 +44,7 @@ for(var i = 0; i < original_data.leads.length; i++){
                 var changes = "Modified " + key + " from " + old_record[key] 
                 + " to "+ new_record[key]+"\n";  
                 output_stream.write(changes);
-                output_stream.on('finish',(err)=>{
-                    if(err) throw err;
-                })
+                output_stream.end();
             } 
         }
         
@@ -73,10 +71,7 @@ for(var i = 0; i < original_data.leads.length; i++){
                 var changes = "Modified " + key + " from " + old_record[key] 
                 + " to "+ new_record[key]+"\n";  
                 output_stream.write(changes);
-                output_stream.on('finish',(err)=>{
-                    if(err) throw err;
-                })
-            }  
+                output_stream.end();
         }
     }
 }
